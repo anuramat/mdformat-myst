@@ -111,12 +111,6 @@ def _escape_paragraph(text: str, node: RenderTreeNode, context: RenderContext) -
 
 
 def _escape_text(text: str, node: RenderTreeNode, context: RenderContext) -> str:
-    # Escape MyST role names
-    text = _ROLE_NAME_PATTERN.sub(r"\\\1", text)
-
-    # Escape inline and block dollarmath
-    text = text.replace("$", "\\$")
-
     return text
 
 
